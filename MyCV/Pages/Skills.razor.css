@@ -1,0 +1,23 @@
+.skills .skills__content {
+    height: 100vh;
+    color: #6c7581;
+    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+.skills .skills__content h2 {
+    text-transform: uppercase;
+    color: #343a40;
+    font-weight: bold;
+    font-size: 50px;
+}
+.skills .skills__content ul {
+    padding-left: 0 !important;
+}
+.skills .skills__content ul.dev-icons {
+    font-size: 3rem;
+}
+.skills .skills__content ul.dev-icons li {
+    margin: 0px !important;
+}
+.skills .skills__content ul li {
+    list-style-type: none;
+}
