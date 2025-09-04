@@ -1,0 +1,40 @@
+@page "/danh-sach-dien-thoai"
+
+<div class="container">
+    <h3>Danh Sách Điện Thoại</h3>
+    <div class="row">
+        @foreach(PhoneVM phone in lstPhone) {
+            <div class="col-3">
+                <DienThoai phone="@phone" XemChiTiet="@ChonDienThoai"/>
+            </div>
+        }
+    </div>
+
+    @* chi tiết 1 cái dc chon *@
+    @if(dtDuocChon != null){
+        <div class="col-5">
+            <h3>Chi tiết điện thoại</h3>
+            <p>Tên: @dtDuocChon.Name</p>
+            <p>Giá: @dtDuocChon.Price</p>
+            <img src="@dtDuocChon.ImgUrl" alt="@dtDuocChon.Name" style="width: 100px;" />
+        </div>
+    }
+</div>
+
+
+
+@code {
+    List<PhoneVM> lstPhone = new List<PhoneVM> 
+    {
+        new PhoneVM {Id=1, Name="Black Berry", Price=20.99, ImgUrl="products/sp_blackberry.png"},
+        new PhoneVM {Id=2, Name="Iphone X", Price=21.99, ImgUrl="products/sp_iphoneX.png"},
+        new PhoneVM {Id=3, Name="SamSung Galaxy Note 7", Price=22.99, ImgUrl="products/sp_note7.png"},
+        new PhoneVM {Id=4, Name="Vivo 850", Price=23.99, ImgUrl="products/sp_vivo850.png"},
+    };
+
+    public PhoneVM dtDuocChon { get; set; }
+
+    void ChonDienThoai(PhoneVM dt){
+        dtDuocChon = dt;
+    }
+}

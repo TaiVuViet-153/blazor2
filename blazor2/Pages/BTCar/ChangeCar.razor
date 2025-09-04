@@ -1,0 +1,34 @@
+@page "/change-car-color"
+<PageTitle>Change Car Color</PageTitle>
+
+<h3>Change Car Color</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <img src="products/@imgCar" alt="red_car" class="img-fluid">
+        </div>
+        <div class="col-6">
+            <button class="btn btn-danger m-2" @onclick='() => ChangeColor("red")'>Red</button>
+            <button class="btn btn-secondary m-2" @onclick='() => ChangeColor("silver")' >Silver</button>
+            <button class="btn btn-dark m-2" @onclick='() => ChangeColor("black")'>Black</button>
+            <button class="btn btn-primary m-2" @onclick='() => ChangeColor("steel")'>Steel</button>
+            <br>
+            @* dùng vòng lặp để hiện thị ds màu  *@
+            @foreach (string item in dsColor) {
+                @* code html cho 1 button *@
+                <button class="btn btn-light m-2" @onclick='() => ChangeColor(item)'>@item</button>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private string imgCar="red-car.jpg";
+
+    @* sử dụng ds các màu => chạy vòng lòng để hiển thị *@
+    private List<string> dsColor = new List<string> {"red", "silver", "black", "steel" };
+
+    private void ChangeColor(string color) {
+        imgCar = color + "-car.jpg";
+    }
+}

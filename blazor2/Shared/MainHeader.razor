@@ -1,0 +1,88 @@
+@namespace blazor2.Shared
+@* namespace: có thể khai báo thì sẽ tự hiểu là  *@
+
+@inherits LayoutComponentBase
+
+<header style="background-color: #f8f9fa; padding: 10px" class="d-flex justify-content-between align-items-center">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            @* Match="NavLinkMatch.Prefix": nghĩa là chỉ cần giống prefix đầu tiên là được gán activeClass *@
+            <NavLink 
+                class="nav-link" 
+                aria-current="page" 
+                href="/" 
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                Home
+            </NavLink>
+        </li>
+
+        <li class="nav-item">
+            <NavLink 
+                class="nav-link" 
+                href="/login"
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                Login
+            </NavLink>
+        </li>
+
+
+        <li class="nav-item">
+            <NavLink 
+                class="nav-link" 
+                href="/profile"
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                Profile
+            </NavLink>
+        </li>
+
+        <li class="nav-item">
+            <NavLink 
+                class="nav-link" 
+                href="/admin"
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                ADMIN
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink 
+                class="nav-link" 
+                href="/product-list"
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                Product List
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink 
+                class="nav-link" 
+                href="/change-car-color"
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                Car
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink 
+                class="nav-link" 
+                href="/register"
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                Register
+            </NavLink>
+        </li>
+    </ul>
+</header>
+<section>
+    @Body
+</section>

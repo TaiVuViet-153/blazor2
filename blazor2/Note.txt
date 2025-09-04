@@ -1,0 +1,9 @@
+- Pages: chứa file dẫn đến trang nào đó tương ứng 
+        VD : home, /login,... 
+        _host.cshtml: là file cấu trúc html , gắn link css thư viện
+- Properties: chưa thông tin về cấu hình dự án 
+- Shared: chứa các file dùng chung như Layout, header,...
+- wwwroot: chứa hình ảnh, css, js,...thư viện
+
+- _import: khai báo sử dụng "using" những thư viện cần sử dụng, namespace cần dùng trong dự án
+- App: bộ định tuyến, điều hướng về layout 

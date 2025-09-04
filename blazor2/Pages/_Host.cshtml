@@ -1,0 +1,50 @@
+﻿@page "/"
+@namespace blazor2.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+@using Microsoft.AspNetCore.Components.Web
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blazor2</title>
+    <base href="~/" />
+    @* BS5 đời mới *@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    @* link bắt đầu lấy các style bắt đầu bằng các thư mục con và bỏ qua wwwroot *@
+    @* VD: localhost:5001/icons/icon-black.jpg *@
+    @* <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" /> *@
+    <link href="css/site.css" rel="stylesheet" />
+    @* blazor.styles.css là file css được biên dịch ra từ css component *@
+    @* cần gắn link thì mới áp dụng csss ở file component được *@
+    @* VD: Login.razor.css *@
+    <link href="blazor2.styles.css" rel="stylesheet" />
+
+    @* thực hiện thêm component này để thay đổi tên page title khi chuyển component *@
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered">
+</head>
+<body>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

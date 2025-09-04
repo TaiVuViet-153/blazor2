@@ -1,0 +1,25 @@
+<div class="card text-start">
+    <img class="card-img-top img-fluid" src="@car.ImgUrl" alt="Title" />
+    <div class="card-body">
+        <h4 class="card-title">@car.Name</h4>
+        <p class="card-text">$@car.Price</p>
+    </div>
+    <div class="card-footer text-center">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" @onclick="TraiNgiem">
+            Trải nghiệm
+        </button>
+    </div>
+</div>
+
+
+
+@code {
+    [Parameter]
+    public CarVM car { get; set; }
+    [Parameter]
+    public EventCallback<CarVM> traiNghiem { get; set; }
+
+    private void TraiNgiem() {
+        traiNghiem.InvokeAsync(car);
+    }
+}

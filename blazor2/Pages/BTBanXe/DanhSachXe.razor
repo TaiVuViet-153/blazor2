@@ -1,0 +1,49 @@
+@page "/danh-sach-xe"
+
+<div class="d-flex justify-content-center">
+    @foreach(CarVM item in lstCar) {
+        <Xe car="@item" traiNghiem="@ChonXe"/>
+    }
+</div>
+
+
+<!-- Modal -->
+@{
+    if(XeDuocChon != null)
+    {
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">@XeDuocChon.Name</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @* Hình ảnh của xe tương ứng *@
+                    <img class="w-100" src="@XeDuocChon.ImgUrl" alt="@XeDuocChon.Name" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+@code {
+    public List<CarVM> lstCar = new List<CarVM> 
+    {
+        new CarVM { Id=1, Name="Rolls Royce", ImgUrl="products/black-car.jpg", Price=12.99},
+        new CarVM { Id=2, Name="Lamborghini", ImgUrl="products/red-car.jpg", Price=13.99},
+        new CarVM { Id=3, Name="Ferrari", ImgUrl="products/silver-car.jpg", Price=14.99},
+        new CarVM { Id=4, Name="Porsche", ImgUrl="products/steel-car.jpg", Price=15.99}
+    };
+
+    public CarVM XeDuocChon { get; set; }
+
+    public void ChonXe(CarVM xe) {
+        XeDuocChon = xe;
+    }
+}

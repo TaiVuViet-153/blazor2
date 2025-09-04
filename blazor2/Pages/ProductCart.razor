@@ -1,0 +1,38 @@
+<div class="col-3">
+    <div class="card">
+        <img src="@item.ImageUrl" alt="@item.Name" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">@item.Name</h5>
+            <p class="card-text">@item.Description</p>
+            <p class="card-text">@item.Price</p>
+            @* Khi bấm nút thì danh sách Cart thay đổi *@
+            @* Hàm addToCart sẽ được truyền vào từ Component Cha, để Con sử dụng *@
+            @* Gọi là callback function *@
+            <button class="btn btn-primary" @onclick="AddProduct">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public ProductVM item {get; set;} = new ProductVM();
+
+    // Ở đây ProductVM này nhằm để đưa ra kiểu dữ liệu để truyền vào hàm khi thực hiện InvokeAsync
+    // Nên đặt tên hàm ở component giống với tên hàm ở component cha
+    [Parameter]
+    public EventCallback<ProductVM> AddToCartt { get; set; }
+
+    void AddProduct() 
+    {
+        // gọi hàm AddToCart trong ProductList.razor
+        AddToCartt.InvokeAsync(item);
+    }
+}
+
+@* 
+    COMPONENT con nhận vào paramêtrr là function từ cha và gọi lại khi thực hiện sự kiện onclick
+    - EventCallback<T>: kiểu dữ liệu function có tham số truyền vào là T
+
+*@
