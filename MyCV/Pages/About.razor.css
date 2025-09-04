@@ -1,0 +1,38 @@
+.resume .resume__content {
+    height: 100vh;
+}
+.resume .resume__content h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 80px;
+    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+.resume .resume__content h1 span {
+    color: rgb(189 93 56);
+}
+.resume .resume__content h5 {
+    text-transform: uppercase;
+    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    font-weight: 500;
+    font-size: 20px;
+    color: #6c757d;
+}
+.resume .resume__content p {
+    color: #6c7581;
+}
+.resume .resume__content .resume__content--icon .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #495057;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+}
+.resume .resume__content .resume__content--icon .social-icon:hover {
+    background-color: #bd5d38;
+}
+

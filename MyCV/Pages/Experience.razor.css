@@ -1,0 +1,24 @@
+.experience .experience__content {
+    height: 100vh;
+    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+.experience .experience__content h2 {
+    text-transform: uppercase;
+    color: #343a40;
+    font-weight: bold;
+    font-size: 50px;
+}
+.experience .experience__content h3 {
+    text-transform: uppercase;
+    color: #343a40;
+}
+.experience .experience__content h3 .subheading {
+    text-transform: uppercase;
+    color: #6c7581;
+}
+.experience .experience__content p {
+    color: #6c7581;
+}
+.experience .experience__content .text-primary {
+    color: rgb(189 93 56) !important;
+}
