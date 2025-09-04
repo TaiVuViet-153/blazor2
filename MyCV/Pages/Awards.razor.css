@@ -1,0 +1,20 @@
+.awards .awards__content {
+    height: 100vh;
+}
+.awards .awards__content h2 {
+    text-transform: uppercase;
+    color: #343a40;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+.awards .awards__content ul {
+    color: #6c7581;
+    padding-left: 0px !important;
+}
+.awards .awards__content ul li {
+    list-style-type: none;
+}
+.awards .awards__content ul li svg {
+    color: #ffc107 !important;
+}

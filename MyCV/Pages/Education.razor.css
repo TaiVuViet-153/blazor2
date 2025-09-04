@@ -1,0 +1,28 @@
+.education {
+    margin-top: 10%;
+}
+.education .education__content {
+    height: 100vh;
+    font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+.education .education__content h2 {
+    text-transform: uppercase;
+    color: #343a40;
+    font-weight: bold;
+    font-size: 50px;
+}
+.education .education__content h3 {
+    text-transform: uppercase;
+    color: #343a40;
+}
+.education .education__content h3 .subheading {
+    text-transform: uppercase;
+    color: #6c7581;
+}
+.education .education__content p {
+    color: #6c7581;
+}
+.experience .education__content .text-primary {
+    color: rgb(189 93 56) !important;
+}
+
