@@ -1,0 +1,42 @@
+@page "/change-car"
+<PageTitle>Change Car Color</PageTitle>
+
+<div class="container">
+    <h3 class="text-center text-primary">Change Car Color</h3>
+    <div class="row">
+        <div class="col-6">
+            <img src="products/@car" alt="car" class="img-fluid" />
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+            @foreach (var item in lstCar) {
+                <button 
+                    class="m-2 w-100 icon-button" 
+                    style="
+                        background-image: url('icons/@item.Key');
+                    " 
+                    @onclick="@(() => ChangeColor(item.Value))"
+                >
+                    @item.Value.ToUpper()
+                </button>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private string car = "red-car.jpg";
+    private string icon = "icon-red.jpg";
+
+    private Dictionary<string, string> lstCar = new Dictionary<string, string> 
+    {
+        {"icon-red.jpg", "red"},
+        {"icon-silver.jpg", "silver"},
+        {"icon-black.jpg", "black"},
+        {"icon-steel.jpg", "steel"}
+    };
+
+
+    private void ChangeColor(string color) {
+        car = color + "-car.jpg";
+    }
+}
