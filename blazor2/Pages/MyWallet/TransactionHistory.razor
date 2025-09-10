@@ -1,0 +1,23 @@
+@using System.Globalization
+
+<div class="container p-5">
+    <h3 class="text-light text-uppercase text-center fw-bold">transaction history</h3>
+    <div class="wrapper bg-white border rounded overflow-hidden">
+    @{
+        foreach (var item in lsTransaction) {
+            string itemClass = @item.Type ? "bg-deposit" : "bg-withdraw";
+            <div class="row fw-bold p-2 @itemClass">
+                <div class="col-4">@(item.Type ? "Deposit" : "Withdraw")</div>
+                <div class="col-4 text-center">@item.Amount.ToString("C", CultureInfo.GetCultureInfo("en-US"))</div>
+                <div class="col-4 text-end">@item.Time</div>
+            </div>
+        }
+    }
+    </div>
+
+</div>
+
+@code {
+    [Parameter]
+    public List<TransactionVM> lsTransaction { get; set; }
+}

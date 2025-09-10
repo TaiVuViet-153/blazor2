@@ -1,0 +1,11 @@
+{
+    "AccountName": "Viet Tai",
+    "AccountNumber": "123456",
+    "Balance": 10000,
+    "TransactionHistory": [
+        {"Type": true, "Amount": 500, "Time": "21 Jan 2025 3:00 PM"},
+        {"Type": false, "Amount": 200, "Time": "20 Jan 2025 10:10 AM"},
+        {"Type": false, "Amount": 200, "Time": "20 Jan 2025 10:00 AM"},
+        {"Type": true, "Amount": 500, "Time": "18 Jan 2025 3:00 PM"}
+    ]
+}

@@ -81,6 +81,74 @@
                 Register
             </NavLink>
         </li>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <NavLink 
+                        class="nav-link" 
+                        href="/on-init?content=hello"
+                        activeClass="active"
+                        Match="NavLinkMatch.All"
+                    >
+                        LifeCycle - OnInit
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        class="nav-link" 
+                        href="/demo-render?content=hi"
+                        activeClass="active"
+                        Match="NavLinkMatch.All"
+                    >
+                        Lifecyle - Render
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        class="nav-link" 
+                        href="/demo-render?content=hello"
+                        activeClass="active"
+                        Match="NavLinkMatch.All"
+                    >
+                        Lifecyle - Render ver2
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+        
+        <li class="nav-item">
+            <NavLink 
+                class="nav-link" 
+                href="/wallet"
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                My Wallet
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink 
+                class="nav-link" 
+                href="/demo-dispose"
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                Demo Dispose
+            </NavLink>
+        </li>
+        <li class="nav-item">
+            <NavLink 
+                class="nav-link" 
+                href="/san-pham"
+                activeClass="active"
+                Match="NavLinkMatch.All"
+            >
+                San Pham
+            </NavLink>
+        </li>
     </ul>
 </header>
 <section>

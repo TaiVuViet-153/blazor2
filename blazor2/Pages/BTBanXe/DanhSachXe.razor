@@ -41,7 +41,7 @@
         new CarVM { Id=4, Name="Porsche", ImgUrl="products/steel-car.jpg", Price=15.99}
     };
 
-    public CarVM XeDuocChon { get; set; }
+    public CarVM XeDuocChon { get; set; } = new CarVM();
 
     public void ChonXe(CarVM xe) {
         XeDuocChon = xe;

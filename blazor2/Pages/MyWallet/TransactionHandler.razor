@@ -1,0 +1,55 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">@(transactionType ? "Deposit" : "Withdraw")</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @onclick="cancelTransaction"></button>
+        </div>
+        <div class="modal-body">
+            <label for="transaction-amount" class="form-label">Amount</label>
+            <input type="text" id="transaction-amount" class="form-control" @bind="transactionAmount" placeholder="Enter the amount..."/>
+            <p class="text-danger" hidden="@isNotEmptyAmount">@errorMessage</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="cancelTransaction">Cancel</button>
+            <button type="button" class="btn btn-primary" @onclick="handleTransactionSubmit" >Ok</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public bool transactionType { get; set; }
+    [Parameter]
+    public double balance { get; set; }
+    [Parameter]
+    public EventCallback<double> handleTransaction { get; set; }
+
+    public double transactionAmount { get; set; }
+    public bool isNotEmptyAmount { get; set; }
+    public string errorMessage { get; set; }
+
+    private async Task handleTransactionSubmit() {
+        if (transactionAmount != 0) {
+            if (!transactionType && (transactionAmount > balance)) {
+                errorMessage = "The amount must be less than the balance";
+                isNotEmptyAmount = false;
+            }
+            else {
+                await handleTransaction.InvokeAsync(transactionAmount);
+                cancelTransaction();
+            }
+        }
+        else {
+            isNotEmptyAmount = false;
+            errorMessage = "The amount must be greater than 0";
+        }
+    }
+
+    private void cancelTransaction() {
+        transactionAmount = 0;
+        isNotEmptyAmount = true;
+        errorMessage = "";
+    }
+}

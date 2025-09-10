@@ -29,6 +29,9 @@ namespace blazor2
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
+            // DI httpclient
+            services.AddHttpClient();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +48,8 @@ namespace blazor2
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            // tự động chuyển về https
+            // app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
