@@ -1,0 +1,25 @@
+REST/ RESTFULL API
+
+// thêm, xoá, sửa, đọc CRUD
+
+GET POST PUT DELETE
+
+RESTFULL
+Lấy dữ liệu: GET
+Thêm mới: POST
+Xoá: DELETE
+Cập nhật: PUT
+
+REST
+Xoá: get, put, post (đều được)
+
+
+Status Code:
+200: get thành công, thao tác thành công
+201: thêm mới thành công
+
+400: bad request
+401, 403: liên quan đến authentication
+429: too many request
+
+500: server error

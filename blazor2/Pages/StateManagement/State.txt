@@ -1,0 +1,14 @@
+STATE MANAGERMENT 
+state là gì? 
+        - > những dự liệu / biến được sử dụng 
+
+
+Các bước để cấu hình State Managerr
+        b1: Có file service
+                - giá trị state
+                - function làm thay đổi state
+                - đăng ký action để thông báo thay đổi()
+        b2: Đăng ký DI vào Startup/Program (Singleton)
+        b3: Ở nơi cần sử dụng State thì @inject đến
+                - đăng ký nhận sự kiện khi khởi tạo
+                - clear khi rời khỏi

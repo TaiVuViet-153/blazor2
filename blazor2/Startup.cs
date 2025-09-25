@@ -26,11 +26,29 @@ namespace blazor2
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // thêm signalR
+            services.AddSignalR();
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
             // DI httpclient
             services.AddHttpClient();
+
+            // custom httpclient
+            services.AddHttpClient("ShoeShopApi", client =>
+            {
+                client.BaseAddress = new Uri("https://apistore.cybersoft.edu.vn/");
+            });
+
+            // Đăng ký dịch vụ CounterService với vòng đời
+            // Singleton: Dịch vụ sẽ được tạo một lần và sử dụng chung trong toàn bộ ứng dụng
+            services.AddSingleton<CounterService>();
+            services.AddSingleton<BurgerService>();
+            services.AddSingleton<CryptoService>();
+            services.AddSingleton<ShoeShopStateService>();
+
+            // đăng ký dịch vụ RoomChatService
+            services.AddSingleton<RoomChatService>();
 
         }
 
@@ -57,6 +75,13 @@ namespace blazor2
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapBlazorHub();
+
+                // cho biết sẽ map với hub nào
+                // vì đang để hub chung source nên "/roomHub" => url hiện tại/roomHub
+                // nếu hub ở 1 server khác thì truyền 1 url chính xác vào
+                endpoints.MapHub<RoomHub>("/roomHub");
+                endpoints.MapHub<ShoeShopHub>("/shoeShopHub");
+
                 endpoints.MapFallbackToPage("/_Host");
             });
         }

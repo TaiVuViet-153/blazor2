@@ -1,0 +1,36 @@
+@page "/counter"
+@inject CounterService _counterService
+@implements IDisposable
+
+<h3>Counter</h3>
+<p>Current count: @_counterService.CurrentCounter</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Tăng</button>
+<button class="btn btn-primary" @onclick="DecreaseCount">Giảm</button>
+
+<hr>
+<CounterB />
+
+@code {
+    protected override void OnInitialized()
+    {
+        _counterService.OnChange += HadChangedState;
+    }
+    public async void HadChangedState() {
+        await InvokeAsync(() => StateHasChanged());
+    }
+    // Biến để lưu trữ giá trị hiện tại của bộ đếm
+    
+    // gọi hàm TangCounterr của CounterService
+    public void IncrementCount() {
+        _counterService.TangCounter();
+    }
+
+    public void DecreaseCount() {
+        _counterService.GiamCounter();
+    }
+
+    public void Dispose() {
+        _counterService.OnChange -= HadChangedState;
+    }
+
+}

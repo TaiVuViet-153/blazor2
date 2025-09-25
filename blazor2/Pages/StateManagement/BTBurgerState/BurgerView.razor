@@ -1,0 +1,27 @@
+@inject BurgerService _burgerService
+@implements IDisposable
+
+<div>
+    <div class="breadTop"></div>
+    @* ds topping từ service state *@
+    @foreach (var topping in _burgerService.Toppings) {
+        for(int i = 0; i < @topping.Quantity; i++) {
+            <div class="@topping.Name"></div>
+        }
+    }
+
+    <div class="breadBottom"></div>
+</div>
+
+@code {
+    protected override void OnInitialized() {
+        _burgerService.OnChange += HadChangedState;
+    }
+    public async void HadChangedState() {
+        await InvokeAsync(() => StateHasChanged());
+    }
+
+    public void Dispose() {
+        _burgerService.OnChange -= HadChangedState;
+    }
+}

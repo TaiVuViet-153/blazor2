@@ -1,0 +1,36 @@
+@*  ở đây cũng sẽ lấy ra ds topping hiển thị dạng table *@
+@inject BurgerService _burgerService
+<h3>Chọn Topping</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Topping</th>
+            <th>Giá</th>
+            <th>Số Lượng</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in _burgerService.Toppings)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                <button class="btn btn-warning" @onclick="() => ModifyTopping(item.Name, -1)">-</button>
+                @item.Quantity 
+                <button class="btn btn-success" @onclick="() => ModifyTopping(item.Name, 1)">+</button></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<p>Tổng tiền: @_burgerService.TongTien()</p>
+
+@code {
+    private void ModifyTopping(string itemName,int itemQuantity) {
+        _burgerService.ChangeToppingQuantity(itemName, itemQuantity);
+    }
+}

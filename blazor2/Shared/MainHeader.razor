@@ -3,7 +3,7 @@
 
 @inherits LayoutComponentBase
 
-<header style="background-color: #f8f9fa; padding: 10px" class="d-flex justify-content-between align-items-center">
+<header style="background-color: #f8f9fa; padding: 10px;" class="d-flex justify-content-between align-items-center">
     <ul class="nav nav-pills">
         <li class="nav-item">
             @* Match="NavLinkMatch.Prefix": nghĩa là chỉ cần giống prefix đầu tiên là được gán activeClass *@
@@ -18,7 +18,7 @@
             </NavLink>
         </li>
 
-        <li class="nav-item">
+        @* <li class="nav-item">
             <NavLink 
                 class="nav-link" 
                 href="/login"
@@ -50,7 +50,7 @@
             >
                 ADMIN
             </NavLink>
-        </li>
+        </li> *@
         <li class="nav-item">
             <NavLink 
                 class="nav-link" 
@@ -149,6 +149,80 @@
                 San Pham
             </NavLink>
         </li>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                State
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <NavLink 
+                        class="nav-link" 
+                        href="/counter"
+                        activeClass="active"
+                        Match="NavLinkMatch.All"
+                    >
+                        Counter
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        class="nav-link" 
+                        href="/counter_b"
+                        activeClass="active"
+                        Match="NavLinkMatch.All"
+                    >
+                        Counter B
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        class="nav-link" 
+                        href="/burger"
+                        activeClass="active"
+                        Match="NavLinkMatch.All"
+                    >
+                        Burger
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        class="nav-link" 
+                        href="/crypto"
+                        activeClass="active"
+                        Match="NavLinkMatch.All"
+                    >
+                        Crypto
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink 
+                        class="nav-link" 
+                        href="/shoeshop"
+                        activeClass="active"
+                        Match="NavLinkMatch.All"
+                    >
+                        Shoe Shop
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Signal R
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <NavLink 
+                        class="nav-link" 
+                        href="/room_chat"
+                        activeClass="active"
+                        Match="NavLinkMatch.All"
+                    >
+                        Room Chat
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
     </ul>
 </header>
 <section>
